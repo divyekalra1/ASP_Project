@@ -1,8 +1,6 @@
-%%
 clc;
 clear all;
 close all;
-%%
 matrix_size = input('Please enter the size of the square matrix A : ');
 for i = 1:matrix_size
     for j = 1:matrix_size

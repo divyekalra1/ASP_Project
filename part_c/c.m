@@ -1,10 +1,10 @@
 clc;
 close all;
 clear all;
+time_start = tic;
 
-
-A = [0 1; .4 .6];
-for i = 1:100000000
+A = [1 0; .3 .7];
+for i = 1:10000000
     flag = 1;
     B = calculate_power(A,i);
     for j = 1:size(B,1)
@@ -20,8 +20,10 @@ for i = 1:100000000
         disp(B)
         break
     else
-        fprintf("A^%d has non positive entries\n",i-1);
+        if(i>1)
+            fprintf("A^%d has non positive entries\n",i-1);
+        end
     end
-
 end
 
+time_end = toc(time_start)
