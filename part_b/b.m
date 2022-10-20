@@ -2,14 +2,14 @@ clc;
 close all;
 clear all;
 
-A = [2 1 1; -1 1 -1; 1 2 3];
+A = [1 2 0; 2 4 0; 3 6 1];
 % rref(A)
 X = sym('x',[1 size(A,1)]).';
 O = zeros(1,size(A,1)).';
 null_A = [A.*X O]
 % size(rref(null_A))
 equ = sym('e__',[1 size(A,1)]).';
-size(null_A)
+% size(null_A);
 null(null_A)
 for i = 1:size(null_A,1)
     equ(i) = sum(null_A(i)) == 0;
